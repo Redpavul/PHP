@@ -17,12 +17,11 @@ class MusicDAO
 
 	}
 
-	public function getID($id){
+	public function get($id){
 	
 		$sql = "SELECT * FROM music WHERE id ='$id'";
 		$sth = $this->db->query($sql);
 		$result = $sth->fetchAll(PDO::FETCH_CLASS,"Music");
-		var_dump($result);
 		return $result; 
 	}
 }
